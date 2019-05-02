@@ -15,9 +15,9 @@ public class ProductInfoRepositoryTest extends ProductApplicationTests {
     ProductInfoRepository productInfoRepository;
 
     @Test
-    public void testFindByProductStatus(){
+    public void testFindByProductStatus() {
         List<ProductInfo> productInfoList = productInfoRepository.findByProductStatus(0);
-        Assert.assertTrue(productInfoList.size()==2);
+        Assert.assertTrue(productInfoList.size() > 0);
     }
 
 }

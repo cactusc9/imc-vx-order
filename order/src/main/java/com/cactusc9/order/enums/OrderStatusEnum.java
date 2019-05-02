@@ -1,0 +1,20 @@
+package com.cactusc9.order.enums;
+
+import lombok.Getter;
+
+@Getter
+public enum  OrderStatusEnum {
+    NEW(0,"新订单"),
+    FINISH(1,"完成订单"),
+    CANCEL(3,"取消订单"),
+    ;
+
+    private Integer code;
+
+    private String message;
+
+    OrderStatusEnum(Integer code,String message){
+        this.code = code;
+        this.message = message;
+    }
+}

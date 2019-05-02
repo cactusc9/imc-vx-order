@@ -13,3 +13,7 @@ eureka:
       defaultZone: http://localhost:8761/eureka
   instance:
     appname: ORDER
+
+#PRODUCt:
+#  ribbon:
+#    NFLoadBalancerRuleClassName：com.netflix.loadbalancer.RandomRule

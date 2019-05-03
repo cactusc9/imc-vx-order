@@ -7,4 +7,6 @@ import java.util.List;
 public interface ProductService {
 
     List<ProductInfo> findUp();
+
+    List<ProductInfo> findByIdList(List<String> productIdList);
 }

@@ -28,7 +28,7 @@ public class ClientController {
 
         // 第二种方法：利用 loadBalancerClient 通过应用名取得 url ，然后同第一种方法
         RestTemplate restTemplate = new RestTemplate();
-        ServiceInstance serviceInstance = loadBalancerClient.choose("product");
+        ServiceInstance serviceInstance = loadBalancerClient.choose("PRODUCT");
         String url = String.format("http://%s:%s/server/msg",serviceInstance.getHost(),serviceInstance.getPort());
         String result = restTemplate.getForObject(url, String.class);
 

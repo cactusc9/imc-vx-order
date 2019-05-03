@@ -14,6 +14,7 @@ eureka:
   instance:
     appname: ORDER
 
-#PRODUCt:
-#  ribbon:
-#    NFLoadBalancerRuleClassName：com.netflix.loadbalancer.RandomRule
+# ：order这个应用名、order调用时使用的应用名loadBalancerClient.choose("PRODUCT")、product应用里面spring.application.name，这三者必须相同且要区分大小写，否则无效
+PRODUCT:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

@@ -1,5 +1,6 @@
 package com.cactusc9.order.client;
 
+import com.cactusc9.order.DTO.ProductDTO;
 import com.cactusc9.order.model.ProductInfo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,4 +16,7 @@ public interface ProductClient {
 
     @PostMapping("/product/listForOrder")
     List<ProductInfo> listForOrder(List<String> productIdList);
+
+    @PostMapping("/product/decreaseStock")
+    void decreaseStock(List<ProductDTO> productDTOList);
 }

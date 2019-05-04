@@ -1,6 +1,7 @@
 package com.cactusc9.product.service.impl;
 
 import com.cactusc9.product.ProductApplicationTests;
+import com.cactusc9.product.dto.ProductDTO;
 import com.cactusc9.product.model.ProductInfo;
 import com.cactusc9.product.service.ProductService;
 import org.junit.Assert;
@@ -27,5 +28,11 @@ public class ProductServiceImplTest extends ProductApplicationTests {
     public void findByProductIdIn() {
         List<ProductInfo> productInfoList = productService.findByIdList(Arrays.asList("157875196366160022", "164103465734242707"));
         Assert.assertTrue(productInfoList.size() > 0);
+    }
+
+    @Test
+    public void decreaseStock(){
+        ProductDTO productDTO = new ProductDTO("164103465734242707",3);
+        productService.decreaseStock(Arrays.asList(productDTO));
     }
 }

@@ -1,5 +1,6 @@
 package com.cactusc9.order.controller;
 
+import com.cactusc9.order.DTO.ProductDTO;
 import com.cactusc9.order.client.ProductClient;
 import com.cactusc9.order.model.ProductInfo;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +22,7 @@ import java.util.List;
 public class ClientController {
 
     @Autowired
-    LoadBalancerClient loadBalancerClient;
+    private LoadBalancerClient loadBalancerClient;
 
     @Autowired
     private RestTemplate restTemplate;
@@ -30,7 +31,7 @@ public class ClientController {
     ProductClient productClient;
 
     @GetMapping("/msg")
-    public String getMsg(){
+    public String getMsg() {
         // // 第一种方法：直接通过访问
         // RestTemplate restTemplate = new RestTemplate();
         // String result = restTemplate.getForObject("http://localhost:8080/server/msg", String.class);
@@ -46,14 +47,22 @@ public class ClientController {
 
         String result = productClient.getMsg();
 
-        log.info("result = {}",result);
+        log.info("result = {}", result);
         return result;
     }
+
     @GetMapping("/listForOrder")
-    public String listForOrder(){
+    public String listForOrder() {
         List<ProductInfo> productInfoList = productClient.listForOrder(Arrays.asList("164103465734242707"));
-        log.info("productInfoList = {}",productInfoList);
+        log.info("productInfoList = {}", productInfoList);
         return "ko";
+    }
+
+    @GetMapping("/decreaseStock")
+    public String decreaseStock() {
+        ProductDTO productDTO = new ProductDTO("164103465734242707",2);
+        productClient.decreaseStock(Arrays.asList(productDTO));
+        return "ok" ;
     }
 
 }

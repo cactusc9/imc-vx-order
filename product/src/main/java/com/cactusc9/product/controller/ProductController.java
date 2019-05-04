@@ -3,6 +3,7 @@ package com.cactusc9.product.controller;
 import com.cactusc9.product.VO.ProductInfoVO;
 import com.cactusc9.product.VO.ProductVO;
 import com.cactusc9.product.VO.ResultVO;
+import com.cactusc9.product.dto.ProductDTO;
 import com.cactusc9.product.model.ProductCategory;
 import com.cactusc9.product.model.ProductInfo;
 import com.cactusc9.product.service.CategoryService;
@@ -61,7 +62,13 @@ public class ProductController {
     }
 
     @PostMapping("/listForOrder")
-    public List<ProductInfo> listForOrder(@RequestBody List<String> productIdList){
+    public List<ProductInfo> listForOrder(@RequestBody List<String> productIdList) {
         return productService.findByIdList(productIdList);
+    }
+
+    @PostMapping("/decreaseStock")
+    public String decreaseStock(@RequestBody List<ProductDTO> productDTOList) {
+        productService.decreaseStock(productDTOList);
+        return "ok";
     }
 }

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: PRODUCt
+    name: PRODUCT
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3310/imc_vx_order?characterEncoding=utf8&useSSL=false

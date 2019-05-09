@@ -61,11 +61,21 @@ public class ProductController {
         return ResultVOUtil.succeed(productVOList);
     }
 
+    /**
+     * 获取商品信息列表(给订单服务调用)
+     * @param productIdList 商品idList
+     * @return
+     */
     @PostMapping("/listForOrder")
     public List<ProductInfo> listForOrder(@RequestBody List<String> productIdList) {
         return productService.findByIdList(productIdList);
     }
 
+    /**
+     * 减库存(给订单服务调用)
+     * @param productDTOList
+     * @return
+     */
     @PostMapping("/decreaseStock")
     public String decreaseStock(@RequestBody List<ProductDTO> productDTOList) {
         productService.decreaseStock(productDTOList);

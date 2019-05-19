@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.cactusc9.order.OrderApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.204 s - in com.cactusc9.order.OrderApplicationTests

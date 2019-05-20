@@ -26,3 +26,8 @@
 
 ### VS Code ###
 .vscode/
+
+
+config/*/*.[yml|properties]
+config.basedir
+

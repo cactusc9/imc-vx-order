@@ -28,6 +28,6 @@
 .vscode/
 
 
-config/*/*.[yml|properties]
+config/*/*.(yml|properties)
 config.basedir
 

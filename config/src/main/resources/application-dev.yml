@@ -5,9 +5,9 @@ spring:
     config:
       server:
         git:
-          uri: your git uri
-          username: your username
-          password: your password
+          uri: #your git uri
+          username: #your username
+          password: #your password
           basedir: F:\ideaProjects\studyProjects\imc-vx-order\config.basedir
 
 eureka:

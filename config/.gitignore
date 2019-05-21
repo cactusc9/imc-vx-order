@@ -1,3 +1,4 @@
+HELP.md
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 
@@ -26,12 +27,3 @@
 
 ### VS Code ###
 .vscode/
-
-
-config/src/main/resources/*.yml
-config/src/main/resources/*.properties
-
-!config/src/main/resources/application-dev.yml
-
-config.basedir
-
